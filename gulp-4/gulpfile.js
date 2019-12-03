@@ -2,7 +2,7 @@
 
 let gulp = require("gulp"),
     autoprefixer = require("gulp-autoprefixer"),
-    //browserSync = require("browser-sync").create(),
+    browserSync = require("browser-sync").create(),
     //reload = browserSync.reload,
     sass = require("gulp-sass"),
     cleanCSS = require("gulp-clean-css"),
@@ -100,11 +100,11 @@ function imgmin() {
 }*/
 
 function watch() {
-    /*browserSync.init({
+    browserSync.init({
         open: "external",
         proxy: "http://localhost",
         port: 8080
-    })*/
+    })
     gulp.watch(sassWatchFiles, gulp.series([SASScss, SASSconcatCSS]))
     gulp.watch(styleWatchFiles, gulp.series([STYLcss, STYLconcatCSS]))
     /*gulp.watch(jsSRC, javascript)
